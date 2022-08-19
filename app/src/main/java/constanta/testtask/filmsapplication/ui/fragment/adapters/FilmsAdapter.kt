@@ -1,6 +1,5 @@
 package constanta.testtask.filmsapplication.ui.fragment.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,19 +18,14 @@ class FilmsAdapter:
     fun updateAll(films: List<Item>){
         filmItems.clear()
         filmItems.addAll(films)
-        Log.d("Adapter 111", filmItems.toString())
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        Log.d("Adapter 112", filmItems.toString())
         return MyViewHolder(LayoutInflater.from(parent.context)
             .inflate(R.layout.film_item, parent, false))
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        Log.d("Adapter 113", filmItems.toString())
-        holder.onBind(filmItems[position])
-    }
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) = holder.onBind(filmItems[position])
 
     override fun getItemCount() = filmItems.size
 
