@@ -1,0 +1,1095 @@
+Index: ../../testtasks/FilmsApplication/app/src/main/res/layout/film_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/layout/film_item.xml b/../../testtasks/FilmsApplication/app/src/main/res/layout/film_item.xml
+new file mode 100644
+--- /dev/null	(date 1660052882769)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/layout/film_item.xml	(date 1660052882769)
+@@ -0,0 +1,58 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:background="@drawable/bg_item_films"
++    android:orientation="vertical"
++    android:layout_marginBottom="20dp">
++
++    <TextView
++        android:id="@+id/filmTitle"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="10dp"
++        android:layout_marginBottom="10dp"
++        android:layout_marginStart="15dp"
++        android:layout_marginEnd="15dp"
++        android:fontFamily="sans-serif-light"
++        android:text="@string/textTitle"
++        android:textSize="36sp"
++        android:textColor="@color/black"/>
++
++    <TextView
++        android:id="@+id/filmDirectorName"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:textSize="28sp"
++        android:text="@string/textName"
++        android:fontFamily="sans-serif-light"
++        android:textColor="@color/black"
++        android:layout_marginBottom="10dp"
++        android:layout_marginStart="15dp"
++        android:layout_marginEnd="15dp"/>
++
++    <TextView
++        android:id="@+id/actorsLabel"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:textSize="28sp"
++        android:text="@string/actors"
++        android:fontFamily="sans-serif-light"
++        android:textColor="@color/black"
++        android:layout_marginBottom="10dp"
++        android:layout_marginStart="15dp"
++        android:layout_marginEnd="15dp"/>
++
++    <androidx.recyclerview.widget.RecyclerView
++        android:id="@+id/recActor"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="15dp"
++        android:layout_marginEnd="15dp"
++        android:layout_marginBottom="5dp"
++        android:scrollbars="horizontal"
++        android:orientation="horizontal"
++        tools:listitem="@layout/actor_item" />
++
++</LinearLayout>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_item_actor.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_item_actor.xml b/../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_item_actor.xml
+new file mode 100644
+--- /dev/null	(date 1660049745609)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_item_actor.xml	(date 1660049745609)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <gradient
++        android:type="linear"
++        android:endColor="#CCD9D9D9"
++        android:startColor="#19FFFFFF"
++        android:angle="270"
++        />
++
++    <corners android:radius="20.0dip" />
++</shape>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/layout/actor_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/layout/actor_item.xml b/../../testtasks/FilmsApplication/app/src/main/res/layout/actor_item.xml
+new file mode 100644
+--- /dev/null	(date 1660052832037)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/layout/actor_item.xml	(date 1660052832037)
+@@ -0,0 +1,24 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:id="@+id/actorItemView"
++    android:layout_width="wrap_content"
++    android:layout_height="wrap_content"
++    >
++
++    <TextView
++        android:id="@+id/actorTextView"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginBottom="10dp"
++        android:layout_marginStart="5dp"
++        android:layout_marginEnd="5dp"
++        android:textSize="16sp"
++        android:background="@drawable/bg_item_actor"
++        android:textColor="@color/black"
++        android:paddingStart="10dp"
++        android:paddingEnd="10dp"
++        android:paddingTop="10dp"
++        android:paddingBottom="10dp"
++        />
++
++</LinearLayout>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/AndroidManifest.xml b/../../testtasks/FilmsApplication/app/src/main/AndroidManifest.xml
+new file mode 100644
+--- /dev/null	(date 1660060199290)
++++ b/../../testtasks/FilmsApplication/app/src/main/AndroidManifest.xml	(date 1660060199290)
+@@ -0,0 +1,28 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    package="constanta.testtask.filmsapplication">
++
++    <uses-permission android:name="android.permission.INTERNET"/>
++
++    <application
++        android:name="ann.example.weather.FilmsApplication"
++        android:allowBackup="true"
++        android:icon="@mipmap/ic_launcher"
++        android:label="@string/app_name"
++        android:roundIcon="@mipmap/ic_launcher_round"
++        android:supportsRtl="true"
++        android:theme="@style/Theme.FilmsApplication"
++        tools:targetApi="31">
++        <activity
++            android:name=".ui.MainActivity"
++            android:exported="true">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++    </application>
++
++</manifest>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/RetrofitClient.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/RetrofitClient.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/RetrofitClient.kt
+new file mode 100644
+--- /dev/null	(date 1659979833878)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/RetrofitClient.kt	(date 1659979833878)
+@@ -0,0 +1,20 @@
++package constanta.testtask.filmsapplication.api
++
++import constanta.testtask.filmsapplication.api.service.FilmsService
++import constanta.testtask.filmsapplication.api.utils.Constants.Companion.BASE_URL
++import retrofit2.Retrofit
++import retrofit2.converter.gson.GsonConverterFactory
++
++object RetrofitClient {
++
++    private val retrofit by lazy {
++        Retrofit.Builder()
++            .baseUrl(BASE_URL)
++            .addConverterFactory(GsonConverterFactory.create())
++            .build()
++    }
++
++    val apiService: FilmsService by lazy {
++        retrofit.create(FilmsService::class.java)
++    }
++}
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/FilmsApplication.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/FilmsApplication.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/FilmsApplication.kt
+new file mode 100644
+--- /dev/null	(date 1659912677934)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/FilmsApplication.kt	(date 1659912677934)
+@@ -0,0 +1,7 @@
++package ann.example.weather
++
++import android.app.Application
++import dagger.hilt.android.HiltAndroidApp
++
++@HiltAndroidApp
++class FilmsApplication : Application()
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/adapters/ActorAdapter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/adapters/ActorAdapter.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/adapters/ActorAdapter.kt
+new file mode 100644
+--- /dev/null	(date 1660785632619)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/adapters/ActorAdapter.kt	(date 1660785632619)
+@@ -0,0 +1,36 @@
++package constanta.testtask.filmsapplication.ui.fragment.adapters
++
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++import android.widget.TextView
++import androidx.recyclerview.widget.RecyclerView
++import constanta.testtask.filmsapplication.R
++import constanta.testtask.filmsapplication.api.model.Actor
++
++class ActorAdapter: RecyclerView.Adapter<ActorAdapter.MyViewHolder>(){
++
++    private val actorItems = mutableListOf<Actor>()
++
++    fun updateAll(actor: List<Actor>){
++        actorItems.clear()
++        actorItems.addAll(actor)
++    }
++
++    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
++        return MyViewHolder(LayoutInflater.from(parent.context)
++            .inflate(R.layout.actor_item, parent, false))
++    }
++
++    override fun onBindViewHolder(holder: MyViewHolder, position: Int) = holder.onBind(actorItems[position])
++
++    override fun getItemCount() = actorItems.size
++
++    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
++        private val actorTextView: TextView = itemView.findViewById(R.id.actorTextView)
++
++        fun onBind(actor: Actor) {
++            actorTextView.text = actor.actorName
++        }
++    }
++}
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/di/AppModule.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/di/AppModule.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/di/AppModule.kt
+new file mode 100644
+--- /dev/null	(date 1659970023230)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/di/AppModule.kt	(date 1659970023230)
+@@ -0,0 +1,39 @@
++package constanta.testtask.filmsapplication.api.di
++
++import constanta.testtask.filmsapplication.api.service.FilmsService
++import constanta.testtask.filmsapplication.api.utils.Constants.Companion.BASE_URL
++import dagger.Module
++import dagger.Provides
++import dagger.hilt.InstallIn
++import dagger.hilt.components.SingletonComponent
++import okhttp3.OkHttpClient
++import okhttp3.logging.HttpLoggingInterceptor
++import retrofit2.Retrofit
++import retrofit2.converter.gson.GsonConverterFactory
++import javax.inject.Singleton
++
++@Module
++@InstallIn(SingletonComponent::class)
++object AppModule {
++
++    @Provides
++    fun baseUrl() = BASE_URL
++
++    @Provides
++    fun logging() = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
++
++    @Provides
++    fun okHttpClient() = OkHttpClient.Builder()
++        .addInterceptor(logging())
++        .build()
++
++    @Provides
++    @Singleton
++    fun provideRetrofit(): FilmsService =
++        Retrofit.Builder()
++            .baseUrl(baseUrl())
++            .addConverterFactory(GsonConverterFactory.create())
++            .client(okHttpClient())
++            .build()
++            .create(FilmsService::class.java)
++}
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/adapters/FilmsAdapter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/adapters/FilmsAdapter.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/adapters/FilmsAdapter.kt
+new file mode 100644
+--- /dev/null	(date 1660785851924)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/adapters/FilmsAdapter.kt	(date 1660785851924)
+@@ -0,0 +1,60 @@
++package constanta.testtask.filmsapplication.ui.fragment.adapters
++
++import android.util.Log
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++import android.widget.TextView
++import android.widget.Toast
++import androidx.recyclerview.widget.LinearLayoutManager
++import androidx.recyclerview.widget.RecyclerView
++import constanta.testtask.filmsapplication.R
++import constanta.testtask.filmsapplication.api.model.Item
++
++class FilmsAdapter: RecyclerView.Adapter<FilmsAdapter.MyViewHolder>(){
++
++    private val filmItems = mutableListOf<Item>()
++
++    fun updateAll(films: List<Item>){
++        filmItems.clear()
++        filmItems.addAll(films)
++    }
++
++    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
++        return MyViewHolder(LayoutInflater.from(parent.context)
++            .inflate(R.layout.film_item, parent, false))
++    }
++
++    override fun onBindViewHolder(holder: MyViewHolder, position: Int) = holder.onBind(filmItems[position])
++
++    override fun getItemCount() = filmItems.size
++
++    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
++        private val filmTitle: TextView = itemView.findViewById(R.id.filmTitle)
++        private val filmDirectorName: TextView = itemView.findViewById(R.id.filmDirectorName)
++        private val recActor: RecyclerView = itemView.findViewById(R.id.recActor)
++        private val adapter: ActorAdapter = ActorAdapter()
++
++        init{
++            recActor.layoutManager = LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL,false)
++            recActor.adapter = adapter
++            Log.d("Adapter", "gjvh")
++        }
++
++        fun onBind(films: Item) {
++            val title = films.title + " (" + films.releaseYear.toString() + ")"
++            filmTitle.text = title
++            filmDirectorName.text = films.directorName
++            adapter.updateAll(films.actors.distinctBy { it.actorName })
++
++            itemView.setOnClickListener {
++                Toast.makeText(itemView.context, "Фильм " + films.title + " был нажат", Toast.LENGTH_LONG).show()
++            }
++
++            Log.d("Adapter", title)
++            Log.d("Adapter", films.directorName)
++            Log.d("Adapter", films.actors.distinctBy { it.actorName }.toString())
++
++        }
++    }
++}
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml b/../../testtasks/FilmsApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+new file mode 100644
+--- /dev/null	(date 1659911750310)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1659911750310)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/service/FilmsService.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/service/FilmsService.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/service/FilmsService.kt
+new file mode 100644
+--- /dev/null	(date 1659985482771)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/service/FilmsService.kt	(date 1659985482771)
+@@ -0,0 +1,11 @@
++package constanta.testtask.filmsapplication.api.service
++
++import constanta.testtask.filmsapplication.api.model.FilmsEntity
++import retrofit2.Response
++import retrofit2.http.GET
++
++interface FilmsService {
++
++    @GET("constanta-android-dev/intership-wellcome-task/main/films.json")
++    suspend fun getFilmsList(): Response<FilmsEntity>
++}
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/repository/Repository.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/repository/Repository.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/repository/Repository.kt
+new file mode 100644
+--- /dev/null	(date 1659970023237)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/repository/Repository.kt	(date 1659970023237)
+@@ -0,0 +1,8 @@
++package constanta.testtask.filmsapplication.api.repository
++
++import constanta.testtask.filmsapplication.api.service.FilmsService
++import javax.inject.Inject
++
++class Repository @Inject constructor(private val apiService: FilmsService){
++    suspend fun getAll() = apiService.getFilmsList()
++}
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_item_films.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_item_films.xml b/../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_item_films.xml
+new file mode 100644
+--- /dev/null	(date 1659962867825)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_item_films.xml	(date 1659962867825)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <gradient
++        android:type="linear"
++        android:startColor="#CCD9D9D9"
++        android:endColor="#19FFFFFF"
++        android:angle="270"
++    />
++
++    <corners android:radius="20.0dip" />
++</shape>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml b/../../testtasks/FilmsApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+new file mode 100644
+--- /dev/null	(date 1659911750301)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml	(date 1659911750301)
+@@ -0,0 +1,30 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:aapt="http://schemas.android.com/aapt"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
++        <aapt:attr name="android:fillColor">
++            <gradient
++                android:endX="85.84757"
++                android:endY="92.4963"
++                android:startX="42.9492"
++                android:startY="49.59793"
++                android:type="linear">
++                <item
++                    android:color="#44000000"
++                    android:offset="0.0" />
++                <item
++                    android:color="#00000000"
++                    android:offset="1.0" />
++            </gradient>
++        </aapt:attr>
++    </path>
++    <path
++        android:fillColor="#FFFFFF"
++        android:fillType="nonZero"
++        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
++        android:strokeWidth="1"
++        android:strokeColor="#00000000" />
++</vector>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/utils/Constants.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/utils/Constants.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/utils/Constants.kt
+new file mode 100644
+--- /dev/null	(date 1659985457011)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/utils/Constants.kt	(date 1659985457011)
+@@ -0,0 +1,7 @@
++package constanta.testtask.filmsapplication.api.utils
++
++class Constants {
++    companion object{
++        const val BASE_URL = "https://raw.githubusercontent.com/"
++    }
++}
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/drawable/ic_launcher_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/drawable/ic_launcher_background.xml b/../../testtasks/FilmsApplication/app/src/main/res/drawable/ic_launcher_background.xml
+new file mode 100644
+--- /dev/null	(date 1659911750287)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/drawable/ic_launcher_background.xml	(date 1659911750287)
+@@ -0,0 +1,170 @@
++<?xml version="1.0" encoding="utf-8"?>
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path
++        android:fillColor="#3DDC84"
++        android:pathData="M0,0h108v108h-108z" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M9,0L9,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,0L19,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,0L29,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,0L39,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,0L49,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,0L59,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,0L69,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,0L79,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M89,0L89,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M99,0L99,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,9L108,9"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,19L108,19"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,29L108,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,39L108,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,49L108,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,59L108,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,69L108,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,79L108,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,89L108,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,99L108,99"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,29L89,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,39L89,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,49L89,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,59L89,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,69L89,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,79L89,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,19L29,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,19L39,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,19L49,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,19L59,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,19L69,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,19L79,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++</vector>
+Index: ../../testtasks/FilmsApplication/app/src/main/res/layout/dialog_block.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/layout/dialog_block.xml b/../../testtasks/FilmsApplication/app/src/main/res/layout/dialog_block.xml
+new file mode 100644
+--- /dev/null	(date 1659967615343)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/layout/dialog_block.xml	(date 1659967615343)
+@@ -0,0 +1,37 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="wrap_content"
++    android:layout_height="wrap_content"
++    android:minHeight="140dp"
++    android:minWidth="260dp"
++    android:background="@drawable/bg_item_films"
++    android:layout_gravity="center"
++    android:gravity="center">
++
++    <TextView
++        android:id="@+id/textViewPushed"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginBottom="20dp"
++        android:fontFamily="sans-serif-black"
++        android:textColor="@color/white"
++        android:textSize="26sp"
++        app:layout_constraintBottom_toTopOf="@+id/buttonOK"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <Button
++        android:id="@+id/buttonOK"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:backgroundTint="#4DFFFFFF"
++        android:minHeight="40dp"
++        android:text="@string/ok"
++        android:textColor="@color/white"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/textViewPushed" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml b/../../testtasks/FilmsApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+new file mode 100644
+--- /dev/null	(date 1659911750089)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1659911750089)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/layout/fragment_list_films.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/layout/fragment_list_films.xml b/../../testtasks/FilmsApplication/app/src/main/res/layout/fragment_list_films.xml
+new file mode 100644
+--- /dev/null	(date 1660053098366)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/layout/fragment_list_films.xml	(date 1660053098366)
+@@ -0,0 +1,34 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout android:id="@+id/fragment"
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@drawable/bg_fragment"
++    tools:context=".ui.fragment.ListFilmsFragment">
++
++    <TextView
++        android:id="@+id/mainLabel"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="20dp"
++        android:layout_marginBottom="20dp"
++        android:layout_marginStart="20dp"
++        android:layout_marginEnd="15dp"
++        android:fontFamily="sans-serif-light"
++        android:text="@string/mainLabel"
++        android:textSize="36sp"
++        android:textColor="@color/white"/>
++
++    <androidx.recyclerview.widget.RecyclerView
++        android:id="@+id/mainRecView"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="20dp"
++        android:layout_marginTop="80dp"
++        android:layout_marginEnd="20dp"
++        android:layout_marginBottom="10dp"
++        tools:listitem="@layout/film_item"
++        />
++
++</FrameLayout>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/values-night/themes.xml b/../../testtasks/FilmsApplication/app/src/main/res/values-night/themes.xml
+new file mode 100644
+--- /dev/null	(date 1660050894121)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/values-night/themes.xml	(date 1660050894121)
+@@ -0,0 +1,5 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Theme.FilmsApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
++    </style>
++</resources>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/Item.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/Item.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/Item.kt
+new file mode 100644
+--- /dev/null	(date 1660053167085)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/Item.kt	(date 1660053167085)
+@@ -0,0 +1,9 @@
++package constanta.testtask.filmsapplication.api.model
++
++data class Item(
++    val actors: List<Actor>,
++    val directorName: String,
++    val releaseYear: Int,
++    val title: String
++)
++
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/Actor.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/Actor.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/Actor.kt
+new file mode 100644
+--- /dev/null	(date 1659912730910)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/Actor.kt	(date 1659912730910)
+@@ -0,0 +1,5 @@
++package constanta.testtask.filmsapplication.api.model
++
++data class Actor(
++    val actorName: String
++)
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/values/colors.xml b/../../testtasks/FilmsApplication/app/src/main/res/values/colors.xml
+new file mode 100644
+--- /dev/null	(date 1660050226036)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/values/colors.xml	(date 1660050226036)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <color name="black">#0F0A4B</color>
++    <color name="white">#D9D9D9</color>
++</resources>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/FilmsEntity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/FilmsEntity.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/FilmsEntity.kt
+new file mode 100644
+--- /dev/null	(date 1659912730875)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/api/model/FilmsEntity.kt	(date 1659912730875)
+@@ -0,0 +1,5 @@
++package constanta.testtask.filmsapplication.api.model
++
++data class FilmsEntity(
++    val items: List<Item>
++)
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/values/strings.xml b/../../testtasks/FilmsApplication/app/src/main/res/values/strings.xml
+new file mode 100644
+--- /dev/null	(date 1660053098375)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/values/strings.xml	(date 1660053098375)
+@@ -0,0 +1,8 @@
++<resources>
++    <string name="app_name">FilmsApplication</string>
++    <string name="ok">OK</string>
++    <string name="textTitle"><![CDATA[<Название> (<год выпуска>)]]></string>
++    <string name="textName">Фамилия И.О.</string>
++    <string name="actors">Каст:</string>
++    <string name="mainLabel">Список фильмов:</string>
++</resources>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/values/themes.xml b/../../testtasks/FilmsApplication/app/src/main/res/values/themes.xml
+new file mode 100644
+--- /dev/null	(date 1659967615378)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/values/themes.xml	(date 1659967615378)
+@@ -0,0 +1,5 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Theme.FilmsApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
++    </style>
++</resources>
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_fragment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_fragment.xml b/../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_fragment.xml
+new file mode 100644
+--- /dev/null	(date 1659961243149)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/drawable/bg_fragment.xml	(date 1659961243149)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <gradient
++        android:type="linear"
++        android:startColor="#2486A1"
++        android:centerColor="#803D78"
++        android:endColor="#A70929"
++        android:angle="315"
++        />
++</shape>
+\ No newline at end of file
+Index: ../../FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/MainActivity.kt b/../../FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/MainActivity.kt
+new file mode 100644
+--- /dev/null	(date 1660060199283)
++++ b/../../FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/MainActivity.kt	(date 1660060199283)
+@@ -0,0 +1,17 @@
++package constanta.testtask.filmsapplication.ui
++
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++import constanta.testtask.filmsapplication.R
++import constanta.testtask.filmsapplication.ui.fragment.ListFilmsFragment
++import dagger.hilt.android.AndroidEntryPoint
++
++@AndroidEntryPoint
++class MainActivity : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_main)
++        supportFragmentManager.beginTransaction().replace(R.id.holder,
++            ListFilmsFragment.newInstance()).commit()
++    }
++}
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/ListFilmsFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/ListFilmsFragment.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/ListFilmsFragment.kt
+new file mode 100644
+--- /dev/null	(date 1660783642839)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/ListFilmsFragment.kt	(date 1660783642839)
+@@ -0,0 +1,47 @@
++package constanta.testtask.filmsapplication.ui.fragment
++
++import android.os.Bundle
++import android.util.Log
++import androidx.fragment.app.Fragment
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++import androidx.lifecycle.ViewModelProvider
++import androidx.recyclerview.widget.LinearLayoutManager
++import constanta.testtask.filmsapplication.databinding.FragmentListFilmsBinding
++import constanta.testtask.filmsapplication.ui.fragment.adapters.FilmsAdapter
++import dagger.hilt.android.AndroidEntryPoint
++
++
++@AndroidEntryPoint
++class ListFilmsFragment : Fragment() {
++
++    private lateinit var viewModel: ListFilmsViewModel
++    private lateinit var binding: FragmentListFilmsBinding
++    private var adapter: FilmsAdapter = FilmsAdapter()
++
++
++    override fun onCreateView(
++        inflater: LayoutInflater, container: ViewGroup?,
++        savedInstanceState: Bundle?
++    ): View {
++        binding = FragmentListFilmsBinding.inflate(inflater, container, false)
++        viewModel = ViewModelProvider(this).get(ListFilmsViewModel::class.java)
++        binding.mainRecView.layoutManager = LinearLayoutManager(context)
++        binding.mainRecView.adapter = adapter
++
++        viewModel.filmsData.observe(viewLifecycleOwner){
++            it.let {
++                Log.d("AAA", it.items.sortedBy { it.releaseYear }.toString())
++                adapter.updateAll(it.items.sortedBy { it.releaseYear })
++            }
++        }
++        return binding.root
++    }
++
++    companion object{
++        @JvmStatic
++        fun newInstance() = ListFilmsFragment()
++    }
++
++}
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/ListFilmsViewModel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/ListFilmsViewModel.kt b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/ListFilmsViewModel.kt
+new file mode 100644
+--- /dev/null	(date 1660071242293)
++++ b/../../testtasks/FilmsApplication/app/src/main/java/constanta/testtask/filmsapplication/ui/fragment/ListFilmsViewModel.kt	(date 1660071242293)
+@@ -0,0 +1,30 @@
++package constanta.testtask.filmsapplication.ui.fragment
++
++import android.util.Log
++import androidx.lifecycle.LiveData
++import androidx.lifecycle.MutableLiveData
++import androidx.lifecycle.ViewModel
++import androidx.lifecycle.viewModelScope
++import constanta.testtask.filmsapplication.api.model.FilmsEntity
++import constanta.testtask.filmsapplication.api.repository.Repository
++import dagger.hilt.android.lifecycle.HiltViewModel
++import kotlinx.coroutines.launch
++import javax.inject.Inject
++
++@HiltViewModel
++class ListFilmsViewModel @Inject constructor(private val repo: Repository) : ViewModel() {
++
++    private val filmList = MutableLiveData<FilmsEntity>()
++    val filmsData: LiveData<FilmsEntity> = filmList
++
++    init {
++        getFilmsList()
++    }
++
++    private fun getFilmsList() = viewModelScope.launch{
++        repo.getAll().let {
++            if (it.isSuccessful)
++                filmList.postValue(it.body())
++        }
++    }
++}
+\ No newline at end of file
+Index: ../../testtasks/FilmsApplication/app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../testtasks/FilmsApplication/app/src/main/res/layout/activity_main.xml b/../../testtasks/FilmsApplication/app/src/main/res/layout/activity_main.xml
+new file mode 100644
+--- /dev/null	(date 1660060199296)
++++ b/../../testtasks/FilmsApplication/app/src/main/res/layout/activity_main.xml	(date 1660060199296)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout
++    android:id="@+id/holder"
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".ui.MainActivity">
++
++</FrameLayout>
+\ No newline at end of file

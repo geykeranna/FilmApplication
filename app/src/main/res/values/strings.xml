@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FilmsApplication</string>
+    <string name="ok">OK</string>
+    <string name="textTitle"><![CDATA[<Название> (<год выпуска>)]]></string>
+    <string name="textName">Фамилия И.О.</string>
+    <string name="actors">Каст:</string>
+    <string name="mainLabel">Список фильмов:</string>
+</resources>
